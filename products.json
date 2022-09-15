@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Dog Toy",
+    "price": 29.90,
+    "img": "https://i.ibb.co/qYT64hF/1.png",
+    "type": "dog"
+  },
+  {
+    "name": "Dog Bed",
+    "price": 79.90,
+    "img": "https://i.ibb.co/XSzKt3Q/2.png",
+    "type": "dog"
+  },
+  {
+    "name": "Cat Astronaut Bed",
+    "price": 129.90,
+    "img": "https://i.ibb.co/k2fhwXc/3.png",
+    "type": "cat"
+  },
+  {
+    "name": "Cat Funny Toy",
+    "price": 19.90,
+    "img": "https://i.ibb.co/y4FPS1h/4.png",
+    "type": "cat"
+  },
+  {
+    "name": "Customized Bird House",
+    "price": 49.90,
+    "img": "https://i.ibb.co/9ZK22m8/5.png",
+    "type": "bird"
+  },
+  {
+    "name": "Hamster Wooden House",
+    "price": 39.90,
+    "img": "https://i.ibb.co/Bjh9SPQ/6.png",
+    "type": "hamster"
+  },
+  {
+    "name": "Hamster Inox Wheel",
+    "price": 29.90,
+    "img": "https://i.ibb.co/6WwdqXk/7.png",
+    "type": "hamster"
+  },
+  {
+    "name": "Aquarium",
+    "price": 69.90,
+    "img": "https://i.ibb.co/LPmJz9k/8.png",
+    "type": "fish"
+  },
+  {
+    "name": "Snake Terrarium",
+    "price": 69.90,
+    "img": "https://i.ibb.co/vJ3h8DY/9.png",
+    "type": "reptile"
+  }
+]
