@@ -11,6 +11,11 @@ const signUpSchema = joi.object({
     passwordConfirmation: joi.string().valid(joi.ref('password')).required()
 });
 
+const signInSchema = joi.object({
+    email: joi.string().email().required(),
+    password: joi.string().min(1).required(),
+});
+
 async function signUp (req, res) {
     const validation =  signUpSchema.validate(req.body, { abortEarly: false });
 
@@ -58,4 +63,34 @@ async function analiseUser(email) {
     return answer;
 }
 
-export { signUp };
+async function signIn(req, res) {
+    const validation = signInSchema.validate(req.body, { abortEarly: false });
+
+    if(validation.error) {
+        const errors = validation.error.details.map(error => error.message);
+
+        return res.status(422).send(errors);
+    }
+
+    const { email, password } = req.body;
+
+    try {
+        const user = await db.collection('users').findOne({ email });
+
+        if(user && bcrypt.compareSync(password, user.password)) {
+            const token = uuid();
+            await db.collection('sessions').insertOne({
+                userId: user._id,
+                token
+            });
+            
+            return res.send({ token, name: user.name });
+        } else {
+            return res.sendStatus(404);
+        }
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+export { signUp, signIn };
