@@ -2,6 +2,7 @@ import joi from 'joi';
 import bcrypt from 'bcrypt';
 import { stripHtml } from 'string-strip-html';
 import db from '../database/db.js';
+import { v4 as uuid } from "uuid";
 
 const signUpSchema = joi.object({ 
     _id: joi.string().length(24).hex(),
